@@ -7,15 +7,15 @@
   <script>
 
 export default {
-  components: {
-    //Login
-  },
-  mounted() {
-    // 跳转页面
-    this.$router.push({
-      name: 'login',
-    })
-  },
+    // name:'user',
+    components: {
+    },
+    mounted() {
+        // 跳转页面
+        this.$router.push({
+        name: 'login',
+        })
+    },
 }
   </script>
   

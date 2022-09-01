@@ -1,36 +1,29 @@
 <template>
     <div>
-      <div style="margin: 40px;"></div>
-      <el-col span="10" offset="7" class="border-secondary border border-5 bg-light">
-  
-        <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm mt-5">
-        <el-form-item label="用户名" prop="username">
+    <!-- rules:表单验证/prop设置校验字段名 -->
+    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="login-box">
+    <el-form-item label="用户名" prop="username">
         <el-input v-model="ruleForm.username" placeholder="请输入用户名" class="w-75"></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="pass">
+    </el-form-item>
+    <el-form-item label="密码" prop="pass">
         <el-input type="password" v-model="ruleForm.pass" autocomplete="off" placeholder="请输入密码" class="w-75"></el-input>
-      </el-form-item>
-      <el-form-item label="确认密码" prop="checkPass">
+    </el-form-item>
+    <el-form-item label="确认密码" prop="checkPass">
         <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off" placeholder="请再次输入密码" class="w-75"></el-input>
-      </el-form-item>
-      
-      <el-form-item>
+    </el-form-item>
+    <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
-      </el-form-item>
-        <!-- <div style="margin: 80px;"></div> -->
+    </el-form-item>
     </el-form>
-      </el-col>
     </div>
-  </template>
+</template>
   
-  <script>
-  // import md5 from "js-md5"
-  import axios from 'axios';
-  
-   export default {
-     name:"Login",
-      data() {
+<script>
+import axios from 'axios';
+    export default {
+        name:"Login",
+        data() {
         var checkusername = (rule, value, callback) => {
           if (!value) {
             return callback(new Error('用户名不能为空'));
@@ -114,8 +107,19 @@
         }
       }
     }
-  </script>
+</script>
 
-  <style>
-    
-  </style>
+<style scoped>
+.login-box{
+    width:350px;
+    margin:120px auto;
+    /* //左右150居中 */
+    border: 1px solid #DCDFE6 ;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #DCDFE6;
+}
+.login-title{
+    text-align: center;
+}
+</style>

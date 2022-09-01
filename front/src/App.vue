@@ -7,7 +7,6 @@
 
 <script>
 import User from './components/user/User'
-
 export default {
   name: 'App',
   components: {

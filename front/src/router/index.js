@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import User from '../components/user/User'
 import Login from '../components/user/Login'
 import Register from '../components/user/Register'
-import Main from '../components/main/Main'
+import Container from '../components/main/Container'
 
 const router = new VueRouter({
 // 配置路由
@@ -29,8 +29,11 @@ const router = new VueRouter({
         },
         {
             path: "/main",
-            name: "main",
-            component:Main,
+            name: "container",
+            component:Container,
+            chilrden:[
+                
+            ]
         },
     ]
 })
