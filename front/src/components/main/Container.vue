@@ -4,13 +4,12 @@
   <el-container>
     <!-- header -->
     <el-header><Header/></el-header>
-    <Navi/>
     <el-container>
-<!-- main -->
-        <!-- <el-main>
-            <router-view></router-view>
-        </el-main>  -->
-     
+    <!-- main -->
+        <Navi/>
+        <el-main>
+          <router-view></router-view>
+        </el-main> 
     </el-container>
   </el-container>
   </div>

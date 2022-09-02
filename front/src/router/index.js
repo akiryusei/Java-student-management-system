@@ -4,6 +4,10 @@ import User from '../components/user/User'
 import Login from '../components/user/Login'
 import Register from '../components/user/Register'
 import Container from '../components/main/Container'
+// 导航组件
+import Students from '../components/main/items/Students'
+import Courses from '../components/main/items/Courses'
+
 
 const router = new VueRouter({
 // 配置路由
@@ -31,8 +35,17 @@ const router = new VueRouter({
             path: "/main",
             name: "container",
             component:Container,
-            chilrden:[
-                
+            children:[
+                {
+                    path: "students",
+                    name: "students",
+                    component: Students,
+                },
+                {
+                    path: "courses",
+                    component: Courses,
+                    name: "courses",
+                }
             ]
         },
     ]
