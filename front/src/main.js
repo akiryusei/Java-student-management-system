@@ -10,9 +10,12 @@ import router from './router'
 // 引入bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
-
+// 引入echarts
+import * as charts from 'echarts';
 Vue.use(ElementUI);
 Vue.use(VueRouter);
+
+Vue.prototype.$charts=charts
 Vue.config.productionTip = false
 
 new Vue({
