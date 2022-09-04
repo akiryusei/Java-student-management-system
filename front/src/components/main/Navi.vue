@@ -48,6 +48,7 @@
             name:"courses"
           })
         },
+<<<<<<< HEAD
         toGrades() {
         this.$router.push({
           name:"grades"
@@ -58,6 +59,8 @@
             name:"analysis"
           })
         },
+=======
+>>>>>>> 124725a90b27efa3e47c8e8635642d8b3c49a80e
       },
       // 钩子函数
       mounted() {
