@@ -6,7 +6,9 @@
     <el-header><Header/></el-header>
     <el-container>
     <!-- main -->
-        <Navi/>
+        <el-aside width="200px">
+          <Navi/>
+        </el-aside>
         <el-main>
           <router-view></router-view>
         </el-main> 
@@ -38,20 +40,22 @@ import Navi from './Navi'
   
   <style>
     .el-header {
-      background-color: #545c64;
+      background-color:#545c64;
       color: #fff;
-      /* 字体颜色 */
+      /* padding: 20px; */
+      /* box-shadow: 0 0 6px rgba(0,0,0,.04); */
     }
     
     .el-aside {
-      background-color: #D3DCE6;
+      background-color: #f9f4dc;
       color: #333;
-      text-align: center;
-      line-height: 200px;
+      text-align:left;
+      /* line-height: 200px; */
+      overflow: hidden;
     }
     
     .el-main {
-      background-color: #E9EEF3;
+      background-color:#DCDFE6;
       color: #333;
       text-align: center;
       line-height: 40px;
@@ -63,4 +67,5 @@ import Navi from './Navi'
     .el-icon-arrow-down {
         font-size: 12px;
     }
+
   </style>

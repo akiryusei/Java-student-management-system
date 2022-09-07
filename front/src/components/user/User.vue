@@ -4,7 +4,7 @@
     </div>
   </template>
   
-  <script>
+<script>
 
 export default {
     // name:'user',
@@ -17,8 +17,8 @@ export default {
         })
     },
 }
-  </script>
+</script>
   
-  <style>
-  
-  </style>
+<style>
+
+</style>

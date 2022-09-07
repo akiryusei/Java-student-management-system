@@ -11,11 +11,10 @@
 </template>
   
 <script>
-  import axios from 'axios'
+import axios from 'axios'
   export default {
     name:"Analysis",
     data() {
-  
       return {
         averageScores: [],
         countGradesNumbers:[],
@@ -28,8 +27,7 @@
         }).then(res => {
           // console.log(res.data);
           this.averageScores = res.data
-        // this.$set(this.$data,'averageScores',res.data)
-        // console.log(this.averageScores);
+          // console.log(this.averageScores);
       })
       },
       async getCountGradesNumbers() {
@@ -39,6 +37,8 @@
           this.countGradesNumbers = res.data
       })
       },
+      // 使用echarts的方法，dom找到这个卡片，init初始化 将其放进
+      // mybar是一张图
       drawBar() {
         console.log(this.scores);
         var myBar = this.$charts.init(document.getElementById("bar"))
@@ -69,6 +69,7 @@
               }]
           })
       },
+      //饼图
       drawPie() {
         var myPie = this.$charts.init(document.getElementById("pie"))
         myPie.setOption(
@@ -114,30 +115,29 @@
     
      
    async mounted() {
+    // 一开始就初始化去拿数据
      await this.getAverageScores();
       this.drawBar();
      await this.getCountGradesNumbers();
      this.drawPie();
-      // console.log(this.averageScores);
-      
-      
+      // console.log(this.averageScores); 
       // console.log(myBar);
     },
   }
 </script>
 <style>
-      .data-view{
-          width: 100%;
-          display:flex;
-          justify-content:space-between
-      }
-      #bar{
-          width:450px;
-          height:375px
-      }
-      #pie{
-          width:480px;
-          height:375px
-      }
+  .data-view{
+    width: 100%;
+    display:flex;
+    justify-content:space-between
+  }
+  #bar{
+    width:450px;
+    height:375px
+  }
+  #pie{
+    width:480px;
+    height:375px
+  }
      
 </style>

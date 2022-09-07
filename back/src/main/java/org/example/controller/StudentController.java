@@ -5,8 +5,10 @@ import com.google.gson.Gson;
 import org.example.mapper.StudentMapper;
 import org.example.pojo.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.List;
 
 @RestController
 @CrossOrigin("*")
@@ -38,6 +40,15 @@ public class StudentController {
         studentQueryWrapper.eq("sid",student.getSid());
         System.out.println(student);
         studentMapper.delete(studentQueryWrapper);
+    }
+
+    @PostMapping("/searchStudents")
+    public String getSearchGrades(@RequestBody HashMap data){
+        QueryWrapper<Student> studentQueryWrapper = new QueryWrapper<>();
+        //模糊查询 %name%
+        studentQueryWrapper.like("name",data.get("name"));
+        List<Student> students = studentMapper.selectList(studentQueryWrapper);
+        return gson.toJson(students);
     }
 
 }

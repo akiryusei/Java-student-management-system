@@ -1,12 +1,10 @@
 <template>
-    <div class="">
+    <div class="back">
       <div v-show="!isLogin">
         <!-- <div style="margin: 80px;"></div> -->
         <!-- 登录界面表单 -->
       <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign" class="login-box">
-        <h4></h4>
-        <h4 class = "login-title">欢迎登录</h4>
-        <br>
+        <h4 class = "login-title">欢 迎 登 录</h4>
         <el-form-item label="用户名:">
             <el-input v-model="formLabelAlign.username" placeholder="请输入用户名" class="w-75"></el-input>
         </el-form-item>
@@ -14,10 +12,9 @@
         <el-form-item label="密码:">
             <el-input type="password" v-model="formLabelAlign.password" placeholder="请输入密码" class="w-75"></el-input>
         </el-form-item>
-        <br>
-        <div class="text-center">
-        <el-button type="warning" icon="" @click="login">登录</el-button>
-        <el-button type="primary" @click="register">注册</el-button>
+        <div class="login_button">
+          <el-button type="warning" icon="" @click="login">登录</el-button>
+          <el-button type="primary" @click="register"  style="margin-left:17%">注册</el-button>
         </div>
       </el-form>
     </div>
@@ -25,7 +22,7 @@
       <div v-show="isLogin">
         <el-col class="text-center" >
           <h3>
-            亲爱的<span class="text-warning h2">{{ formLabelAlign.username }}</span>!欢迎来到学生管理系统!
+            亲爱的<span class="text-warning h2">{{ formLabelAlign.username }}</span>!欢迎使用学生管理系统!
           </h3>       
         </el-col>
       </div>
@@ -40,8 +37,8 @@ import axios from 'axios'
       return {
         labelPosition: 'right',
         formLabelAlign: {
-          username:"", 
-          password:"",
+        username:"", 
+        password:"",
         },
         isLogin:false
       };
@@ -63,12 +60,10 @@ import axios from 'axios'
           }
           else{
             sessionStorage.setItem("username",this.formLabelAlign.username)
-            // sessionStorage.setItem("token",res.data.token);
             this.$alert("登录成功！  尊敬的"+sessionStorage.getItem("username")+"欢迎您！","温馨提示",{
               confirmButtonText: '知道啦'
             });
             this.isLogin = true;
-            // window.open
             this.$router.push({
               name:"container"
             })
@@ -99,6 +94,15 @@ import axios from 'axios'
     box-shadow: 0 0 10px #DCDFE6;
 }
 .login-title{
+    line-height:40px;
     text-align: center;
+    margin-bottom: 25px;
+    margin-top:5px;
 }
+.login_button{
+  margin-top: 25px;
+  margin-bottom: 10px;
+  margin-left:20%;
+}
+
 </style>

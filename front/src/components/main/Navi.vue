@@ -1,12 +1,13 @@
 <template>
-    <div>
       <!-- 一列 -->
-      <el-col >
+    <div >
+      <el-col>
       <el-menu
         :default-active="activatedItem"
         class="el-menu-vertical-demo"
         @open="handleOpen"
-        @close="handleClose">
+        @close="handleClose"
+        active-text-color="">
           <!-- 四个导航栏 -->
           <el-menu-item index="info" @click="toInformation">
             <i class="el-icon-user" ></i>
@@ -24,10 +25,13 @@
             <i class="el-icon-data-line"></i>
             <span slot="title">数据分析</span>
           </el-menu-item>
+          <br><br><br><br><br>
+          <br><br><br><br><br>
+          <br>
       </el-menu>
     </el-col>
-    </div>
-  </template>
+  </div>
+</template>
   
   <script>
   export default {
@@ -48,10 +52,9 @@
             name:"courses"
           })
         },
-<<<<<<< HEAD
         toGrades() {
         this.$router.push({
-          name:"grades"
+          name:"scores"
         })
         },
         toAnalysis() {
@@ -59,8 +62,6 @@
             name:"analysis"
           })
         },
-=======
->>>>>>> 124725a90b27efa3e47c8e8635642d8b3c49a80e
       },
       // 钩子函数
       mounted() {
@@ -70,7 +71,5 @@
 </script>
   
 <style scoped>
-  div{
-    width: 200px
-  }
+
 </style>

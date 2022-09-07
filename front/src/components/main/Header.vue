@@ -5,9 +5,9 @@
         <el-col :span="4" :offset="10">
         <span class="info">学生管理系统 </span>
         </el-col>
-        <el-col :span="4" :offset="6" class="user-info">
-            <el-dropdown>
-            <span class="el-dropdown-link">
+        <el-col :span="4" :offset="6" class="user-info" >
+            <el-dropdown >
+            <span class="el-dropdown-link" >
                 你好,{{username}}
                 <i class="el-icon-arrow-down"></i>
             </span>
@@ -53,6 +53,7 @@ export default {
     text-align: center;
     font-size: 16px;
     line-height: 60px;
+    /* 行高 */
 }
 .user-info{
     text-align: right;

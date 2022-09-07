@@ -14,12 +14,15 @@ public class CoursesController {
     @Autowired
     private CoursesMapper coursesMapper;
 
+    //获取课程信息
     private Gson gson=new Gson();
     @GetMapping("/courses")
     public String getCourses(){
         return gson.toJson(coursesMapper.selectList(null));
     }
 
+
+    /*
     @PostMapping("addCourse")
     public void addCourse(@RequestBody Course courses) {
         coursesMapper.insert(courses);
@@ -36,4 +39,5 @@ public class CoursesController {
         coursesQueryWrapper.eq("cid",course.getCid());
         coursesMapper.delete(coursesQueryWrapper);
     }
+    */
 }

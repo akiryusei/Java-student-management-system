@@ -1,20 +1,22 @@
 <template>
     <div>
     <!-- rules:表单验证/prop设置校验字段名 -->
-    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="login-box">
-    <el-form-item label="用户名" prop="username">
-        <el-input v-model="ruleForm.username" placeholder="请输入用户名" class="w-75"></el-input>
-    </el-form-item>
-    <el-form-item label="密码" prop="pass">
+    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="register-box">
+      <h4 class="register-title">注 册</h4>
+      <el-form-item label="用户名" prop="username">
+          <el-input v-model="ruleForm.username" placeholder="请输入用户名" class="w-75"></el-input>
+      </el-form-item>
+      <el-form-item label="密码" prop="pass">
         <el-input type="password" v-model="ruleForm.pass" autocomplete="off" placeholder="请输入密码" class="w-75"></el-input>
-    </el-form-item>
-    <el-form-item label="确认密码" prop="checkPass">
+      </el-form-item>
+      <el-form-item label="确认密码" prop="checkPass">
         <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off" placeholder="请再次输入密码" class="w-75"></el-input>
-    </el-form-item>
-    <el-form-item>
+      </el-form-item>
+    <!-- button -->
+      <div class="register_button">
         <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
-    </el-form-item>
+        <el-button @click="resetForm('ruleForm')" style="margin-left:17%">重置</el-button>
+      </div>
     </el-form>
     </div>
 </template>
@@ -62,6 +64,7 @@ import axios from 'axios';
             checkPass: '',
             username: ''
           },
+          // 表单验证
           rules: {
             pass: [
               { validator: validatePass, trigger: 'blur' }
@@ -110,7 +113,7 @@ import axios from 'axios';
 </script>
 
 <style scoped>
-.login-box{
+.register-box{
     width:350px;
     margin:120px auto;
     /* //左右150居中 */
@@ -119,7 +122,13 @@ import axios from 'axios';
     border-radius: 5px;
     box-shadow: 0 0 10px #DCDFE6;
 }
-.login-title{
-    text-align: center;
+.register-title{
+    line-height:40px;
+    text-align:center;
 }
+.register_button{
+  margin-bottom: 10px;
+  margin-left:20%;
+}
+
 </style>

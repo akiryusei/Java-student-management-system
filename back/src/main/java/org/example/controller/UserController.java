@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 
 @CrossOrigin("*")
 @SuppressWarnings("all")
@@ -29,28 +28,11 @@ public class UserController {
             return -1;
         }
         return 1;
-
     }
 
     // 注册
     @PostMapping("/register")
     public void register(@RequestBody User user) {
         userMapper.insert(user);
-//        String token = TokenUtil.getToken(user.getUsername());
-//        HashMap<String, String> res = new HashMap<>();
-//        res.put("username", user.getUsername());
-//        res.put("token", token);
-//        return gson.toJson(res);
     }
-
-    // 校验token
-//    @PostMapping("/checkToken")
-//    public String checkToken(@RequestBody HashMap<String, String> data) {
-//        String username = data.get("username");
-//        String token = data.get("token");
-//        if (username.equals(TokenUtil.parseToken(token))) {
-//            return "1";
-//        }
-//        return "0";
-//    }
 }

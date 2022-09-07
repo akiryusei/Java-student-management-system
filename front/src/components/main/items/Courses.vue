@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <!-- 课程信息  -->
-    <el-table :data="tableData" stripe style="width: 100%">
+  <div>
+    <!-- 课程信息  -->
+    <el-col style="margin-top:20px">
+    <el-table :data="tableData" stripe style="width: 100% ">
       <el-table-column
         label="课程号"
         width="">
@@ -26,7 +27,8 @@
         </template>
       </el-table-column>
     </el-table>
-    </div>
+    </el-col>
+  </div>
 </template>
   
 <script>
@@ -44,13 +46,13 @@
             }
         },
         methods: {
-            getCourses() {
-                axios({
-                    url: 'http://localhost:8080/courses',
-                }).then(res => {
-                    this.tableData = res.data;
-                })
-            },
+          getCourses() {
+            axios({
+              url: 'http://localhost:8080/courses',
+            }).then(res => {
+              this.tableData = res.data;
+            })
+          },
         },
         mounted() {
             this.getCourses();
